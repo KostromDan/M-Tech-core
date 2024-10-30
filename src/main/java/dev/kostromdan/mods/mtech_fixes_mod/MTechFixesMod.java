@@ -35,4 +35,10 @@ public class MTechFixesMod
     public static final String MODID = "mtech_fixes_mod";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
+
+    public MTechFixesMod(FMLJavaModLoadingContext context)
+    {
+        MinecraftForge.EVENT_BUS.register(this);
+        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
 }

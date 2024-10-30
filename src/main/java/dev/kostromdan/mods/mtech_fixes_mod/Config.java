@@ -1,17 +1,9 @@
 package dev.kostromdan.mods.mtech_fixes_mod;
 
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
-import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 // An example config class. This is not required, but it's a good idea to have one to keep your config organized.
 // Demonstrates how to use Forge's config APIs
@@ -20,45 +12,38 @@ public class Config
 {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    private static final ForgeConfigSpec.BooleanValue LOG_DIRT_BLOCK = BUILDER
-            .comment("Whether to log the dirt block on common setup")
-            .define("logDirtBlock", true);
+    private static final ForgeConfigSpec.ConfigValue<String> EarthsBoonEnchantChanceRealPLayer = BUILDER
+            .comment("Chance for EarthsBoon Enchant to be applied for real players, apotheosis deafult: 0.01, m-tech default: 0.005, range: 0.0 - 1.0")
+            .define("earthsBoonRealPLayer", "0.005");
 
-    private static final ForgeConfigSpec.IntValue MAGIC_NUMBER = BUILDER
-            .comment("A magic number")
-            .defineInRange("magicNumber", 42, 0, Integer.MAX_VALUE);
+    private static final ForgeConfigSpec.ConfigValue<String> EarthsBoonEnchantChanceFakePLayer = BUILDER
+            .comment("Chance for EarthsBoon Enchant to be applied for fake players(contraptions, robots, etc), apotheosis deafult: 0.01, m-tech default: 0.00001, range: 0.0 - 1.0")
+            .define("earthsBoonFakePLayer", "0.00001");
 
-    public static final ForgeConfigSpec.ConfigValue<String> MAGIC_NUMBER_INTRODUCTION = BUILDER
-            .comment("What you want the introduction message to be for the magic number")
-            .define("magicNumberIntroduction", "The magic number is... ");
 
-    // a list of strings that are treated as resource locations for items
-    private static final ForgeConfigSpec.ConfigValue<List<? extends String>> ITEM_STRINGS = BUILDER
-            .comment("A list of items to log on common setup.")
-            .defineListAllowEmpty(Collections.singletonList("items"), () -> List.of("minecraft:iron_ingot"), Config::validateItemName);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 
-    public static boolean logDirtBlock;
-    public static int magicNumber;
-    public static String magicNumberIntroduction;
-    public static Set<Item> items;
+    public static double earthsBoonRealPLayer;
+    public static double earthsBoonFakePLayer;
 
-    private static boolean validateItemName(final Object obj)
-    {
-        return obj instanceof final String itemName && ForgeRegistries.ITEMS.containsKey(new ResourceLocation(itemName));
+    public static double parseAndValidateDoubleValue(String text, double min, double max) {
+        double value = Double.parseDouble(text);
+
+        final double EPSILON = 1e-6;
+
+        if (value < min - EPSILON || value > max + EPSILON) {
+            throw new NumberFormatException("Value out of range: " + text + " min: " + min + " max: " + max);
+        }
+
+        return value;
     }
+
 
     @SubscribeEvent
     static void onLoad(final ModConfigEvent event)
     {
-        logDirtBlock = LOG_DIRT_BLOCK.get();
-        magicNumber = MAGIC_NUMBER.get();
-        magicNumberIntroduction = MAGIC_NUMBER_INTRODUCTION.get();
-
-        // convert the list of strings into a set of items
-        items = ITEM_STRINGS.get().stream()
-                .map(itemName -> ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)))
-                .collect(Collectors.toSet());
+        earthsBoonRealPLayer = parseAndValidateDoubleValue(EarthsBoonEnchantChanceRealPLayer.get(),0.0D, 1.0D);
+        earthsBoonFakePLayer = parseAndValidateDoubleValue(EarthsBoonEnchantChanceFakePLayer.get(),0.0D, 1.0D);
     }
 }

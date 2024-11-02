@@ -1,17 +1,17 @@
-package dev.kostromdan.mods.mtech_fixes_mod;
+package dev.kostromdan.mods.mtech_core;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 
-@Mod.EventBusSubscriber(modid = MTechFixesMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = MTechCore.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Config {
     private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
     private static final ForgeConfigSpec.ConfigValue<String> EarthsBoonEnchantChanceRealPLayer = BUILDER
-            .comment("Chance for EarthsBoon Enchant to be applied for real players, apotheosis deafult: 0.01, m-tech default: 0.005, range: 0.0 - 1.0")
-            .define("earthsBoonRealPLayer", "0.005");
+            .comment("Chance for EarthsBoon Enchant to be applied for real players, apotheosis deafult: 0.01, m-tech default: 0.0025, range: 0.0 - 1.0")
+            .define("earthsBoonRealPLayer", "0.0025");
 
     private static final ForgeConfigSpec.ConfigValue<String> EarthsBoonEnchantChanceFakePLayer = BUILDER
             .comment("Chance for EarthsBoon Enchant to be applied for fake players(contraptions, robots, etc), apotheosis deafult: 0.01, m-tech default: 0.00001, range: 0.0 - 1.0")

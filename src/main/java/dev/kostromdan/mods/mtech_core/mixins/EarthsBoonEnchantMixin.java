@@ -1,8 +1,8 @@
-package dev.kostromdan.mods.mtech_fixes_mod.mixins;
+package dev.kostromdan.mods.mtech_core.mixins;
 
-import dev.kostromdan.mods.mtech_fixes_mod.Config;
-import dev.kostromdan.mods.mtech_fixes_mod.utils.ChunkPosCacher;
-import dev.kostromdan.mods.mtech_fixes_mod.utils.PlayerUtils;
+import dev.kostromdan.mods.mtech_core.Config;
+import dev.kostromdan.mods.mtech_core.utils.ChunkPosCacher;
+import dev.kostromdan.mods.mtech_core.utils.PlayerUtils;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;

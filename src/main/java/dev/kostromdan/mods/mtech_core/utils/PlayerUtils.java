@@ -1,4 +1,4 @@
-package dev.kostromdan.mods.mtech_fixes_mod.utils;
+package dev.kostromdan.mods.mtech_core.utils;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraftforge.common.util.FakePlayer;

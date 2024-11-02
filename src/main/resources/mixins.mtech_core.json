@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.kostromdan.mods.mtech_fixes_mod.mixins",
+  "package": "dev.kostromdan.mods.mtech_core.mixins",
   "compatibilityLevel": "JAVA_8",
   "client": [
     "EarthsBoonEnchantMixin"

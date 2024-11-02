@@ -82,8 +82,8 @@ dependencies {
 
 mixin {
     disableAnnotationProcessorCheck()
-    add sourceSets.main, 'mixins.mtech_fixes_mod.refmap.json'
-    config 'mixins.mtech_fixes_mod.json'
+    add sourceSets.main, 'mixins.mtech_core.refmap.json'
+    config 'mixins.mtech_core.json'
 }
 
 tasks.named('processResources', ProcessResources).configure {

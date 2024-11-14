@@ -70,6 +70,10 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+    maven {
+        name = 'henkelmax.public'
+        url = 'https://maven.maxhenkel.de/repository/public'
+    }
 }
 
 dependencies {
@@ -78,6 +82,10 @@ dependencies {
     implementation fg.deobf("org.spongepowered:mixin:0.8.5")
 
     implementation fg.deobf("curse.maven:apotheosis-313970:5753172")
+    implementation fg.deobf("curse.maven:sound-physics-remastered-535489:5525251")
+    implementation 'de.maxhenkel.configbuilder:configbuilder:2.0.1'
+    jarJar(group: 'de.maxhenkel.configbuilder', name: 'configbuilder', version: '[2.0,3.0)')
+
 }
 
 mixin {
@@ -134,3 +142,4 @@ publishing {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+jarJar.enable()

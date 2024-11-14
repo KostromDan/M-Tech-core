@@ -1,4 +1,4 @@
-package dev.kostromdan.mods.mtech_core.mixins;
+package dev.kostromdan.mods.mtech_core.mixins.apotheosis;
 
 import dev.kostromdan.mods.mtech_core.Config;
 import dev.kostromdan.mods.mtech_core.utils.ChunkPosCacher;

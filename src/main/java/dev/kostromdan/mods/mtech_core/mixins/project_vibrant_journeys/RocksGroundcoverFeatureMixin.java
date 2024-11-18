@@ -25,7 +25,7 @@ public class RocksGroundcoverFeatureMixin {
         BlockPos origin = context.origin();
         WorldGenLevel level = context.level();
         BlockState originState = level.getBlockState(origin);
-        if (originState.getMaterial().isSolid()) {
+        if (!originState.getMaterial().isReplaceable() && !level.isEmptyBlock(origin)) {
 //            String blockId = Registry.BLOCK.getKey(originState.getBlock()).toString();
 //            MTechCore.LOGGER.info("RocksGroundcoverFeature: Solid block '" + blockId + "' found /tp " + origin.getX() + " " + origin.getY() + " " + origin.getZ());
 //            level.setBlock(origin, Blocks.RED_WOOL.defaultBlockState(), 3);

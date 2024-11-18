@@ -1,6 +1,6 @@
 package dev.kostromdan.mods.mtech_core;
 
-import dev.kostromdan.mods.mtech_core.utils.SoundCountCache;
+import dev.kostromdan.mods.mtech_core.utils.SoundsPerTickCounter;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,7 +12,7 @@ public class ClientTickHandler {
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.Phase.START) {
-            SoundCountCache.resetAllCounts();
+            SoundsPerTickCounter.resetAllCounts();
         }
     }
 }

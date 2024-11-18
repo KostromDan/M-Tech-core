@@ -14,7 +14,7 @@ public class MTechCore {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "mtech_core";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static MaxSoundsPerTickConfig MAX_SOUNDS_PER_TICK_CONFIG;
 
 

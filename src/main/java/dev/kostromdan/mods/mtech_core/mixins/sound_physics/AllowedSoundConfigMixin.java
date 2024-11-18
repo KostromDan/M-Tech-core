@@ -12,7 +12,7 @@ public class AllowedSoundConfigMixin {
      * @author
      * @reason
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public boolean isAllowed(String soundEvent) {
         return !(SoundsPerTickCounter.getCountAndIncrement(soundEvent) >= MTechCore.MAX_SOUNDS_PER_TICK_CONFIG.getMaxCount(soundEvent));
     }
@@ -21,7 +21,7 @@ public class AllowedSoundConfigMixin {
      * @author
      * @reason
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void load() {
     }
 
@@ -29,7 +29,7 @@ public class AllowedSoundConfigMixin {
      * @author
      * @reason
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void saveSync() {
     }
 

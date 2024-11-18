@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(SoundPhysicsMod.class)
 public class SoundPhysicsModMixin {
 
-    @Inject(method = "initClient", at = @At("RETURN"))
+    @Inject(method = "initClient", at = @At("RETURN"), remap = false)
     private void afterInitClient(CallbackInfo ci) {
         AllowedSoundsRenamer.renameAllowedSounds();
         MTechCore.MAX_SOUNDS_PER_TICK_CONFIG = new MaxSoundsPerTickConfig(FMLLoader.getGamePath().resolve("config").resolve(SoundPhysicsMod.MODID).resolve("max_sounds_per_tick.properties"));

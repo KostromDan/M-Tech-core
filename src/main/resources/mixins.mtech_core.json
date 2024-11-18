@@ -3,8 +3,10 @@
   "minVersion": "0.8.4",
   "package": "dev.kostromdan.mods.mtech_core.mixins",
   "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.mtech_core.refmap.json",
   "mixins": [
     "apotheosis.EarthsBoonEnchantMixin",
+    "project_vibrant_journeys.RocksGroundcoverFeatureMixin",
     "sound_physics.AllowedSoundConfigMixin",
     "sound_physics.SoundPhysicsModMixin"
   ],

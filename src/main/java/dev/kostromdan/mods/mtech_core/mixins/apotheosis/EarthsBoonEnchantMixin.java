@@ -23,7 +23,7 @@ public class EarthsBoonEnchantMixin {
      * @author KostromDan
      * @reason Adjust chance separately for fake players and real players to balance EarthsBoonEnchant. And prevent afk farms.
      */
-    @Overwrite
+    @Overwrite(remap = false)
     public void provideBenefits(BreakEvent e) {
         Player player = e.getPlayer();
         ItemStack stack = player.getMainHandItem();

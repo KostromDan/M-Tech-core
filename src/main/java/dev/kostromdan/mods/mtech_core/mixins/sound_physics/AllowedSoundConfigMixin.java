@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.Overwrite;
 @Mixin(AllowedSoundConfig.class)
 public class AllowedSoundConfigMixin {
     /**
-     * @author
-     * @reason
+     * @author KostromDan
+     * @reason Replace AllowedSounds logic to MaxSoundsPerTick
      */
     @Overwrite(remap = false)
     public boolean isAllowed(String soundEvent) {
@@ -18,16 +18,16 @@ public class AllowedSoundConfigMixin {
     }
 
     /**
-     * @author
-     * @reason
+     * @author KostromDan
+     * @reason Prevent AllowedSoundConfig from generating.
      */
     @Overwrite(remap = false)
     public void load() {
     }
 
     /**
-     * @author
-     * @reason
+     * @author KostromDan
+     * @reason Prevent AllowedSoundConfig from generating.
      */
     @Overwrite(remap = false)
     public void saveSync() {

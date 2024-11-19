@@ -32,6 +32,4 @@ public class AllowedSoundConfigMixin {
     @Overwrite(remap = false)
     public void saveSync() {
     }
-
-
 }

@@ -86,6 +86,9 @@ dependencies {
     implementation fg.deobf("curse.maven:apotheosis-313970:5753172")
     implementation fg.deobf("curse.maven:sound-physics-remastered-535489:5525251")
     implementation fg.deobf("curse.maven:project-vibrant-journeys-300297:4853948")
+    implementation fg.deobf("curse.maven:citadel-331936:4556677")
+    implementation fg.deobf("curse.maven:createaddition-439890:5099757")
+    implementation fg.deobf("curse.maven:alexs-mobs-426558:4159154")
     implementation 'de.maxhenkel.configbuilder:configbuilder:2.0.1'
     jarJar(group: 'de.maxhenkel.configbuilder', name: 'configbuilder', version: '[2.0,3.0)')
 

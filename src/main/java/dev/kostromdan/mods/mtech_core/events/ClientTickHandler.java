@@ -1,5 +1,6 @@
-package dev.kostromdan.mods.mtech_core;
+package dev.kostromdan.mods.mtech_core.events;
 
+import dev.kostromdan.mods.mtech_core.MTechCore;
 import dev.kostromdan.mods.mtech_core.utils.SoundsPerTickCounter;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;

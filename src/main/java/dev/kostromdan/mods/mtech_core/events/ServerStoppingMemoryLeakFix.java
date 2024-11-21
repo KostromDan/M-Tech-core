@@ -17,8 +17,8 @@ import java.util.Map;
 @Mod.EventBusSubscriber(modid = MTechCore.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ServerStoppingMemoryLeakFix {
     public static final VarHandle CITADEL_DATA_MAP;
-    public static final VarHandle BEACHED_CACHALOT_WHALE_SPAWNER_MAP;
     public static final VarHandle AM_DATA_MAP;
+    public static final VarHandle BEACHED_CACHALOT_WHALE_SPAWNER_MAP;
 
 
     static {
